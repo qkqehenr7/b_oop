@@ -7,7 +7,7 @@ public class Book {
     private Integer price;
     private Boolean activated;
 
-    private public Book(String title, String author, Integer price, Boolean activated) {
+    private Book(String title, String author, Integer price, Boolean activated) {
         this.title = title;
         this.author = author;
         this.price = price;
@@ -42,6 +42,10 @@ public class Book {
         public Builder activated(Boolean activated){
             this.activated = activated;
             return this;
+        }
+
+        public Book build(){
+            return new Book(title, author, price, activated);
         }
     }
 
